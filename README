@@ -1,0 +1,5 @@
+# ~の下にシンボリックリンクを貼る
+sh put_all.sh
+
+# vundleのインストールコマンド実行
+Launch vim, run :BundleInstall 

@@ -116,19 +116,6 @@ let g:pymode_utils_whitespaces = 0
 let g:pymode_rope_goto_def_newwin = 'vnew'
 let g:pyflakes_use_quickfix = 0
 
-" avoid below error
-" UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-30:
-" ordinal not in range(128)
-"
-" (mh)(git)-[release]# diff ~/.vim/bundle/python-mode/pylibs/ropevim.py
-" ~/.vim/bundle/python-mode/pylibs/ropevim.py.org 
-" 351,352c351
-" <         #return u'"{0}"'.format(str(obj).replace(u'"', u'\\"'))
-" <         return u'"{0}"'.format(obj.replace(u'"', u'\\"'))
-" ---
-"  >         return u'"{0}"'.format(str(obj).replace(u'"', u'\\"'))
-
-
 " install gxargs
 " brew install findutils
 if has('mac')
@@ -152,3 +139,4 @@ colorscheme desert
 augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
 augroup END
+
