@@ -1,3 +1,7 @@
+# サブモジュール
+git submodule init
+git submodule update
+
 # ~の下にシンボリックリンクを貼る
 sh put_all.sh
 

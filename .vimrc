@@ -39,20 +39,23 @@ filetype plugin indent on     " required!
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""
+" change window
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
 " Turn off search hilight
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " for nerdtree
 nmap <unique> <F2> :NERDTreeToggle<CR>
 
-" change window
-nmap <unique> <F3> <C-w>w
-
 " rope jump to define
-nmap <unique> <F5> :call RopeGotoDefinition()<CR>
+nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
 
 " rope jump to occurrences
-nmap <unique> <F6> :call RopeFindOccurrences()<CR>
+nmap <unique> <c-m> :call RopeFindOccurrences()<CR>
 
 " for grep
 nmap <silent><unique> <F7> :Grep<CR>
