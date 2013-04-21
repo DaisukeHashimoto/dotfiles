@@ -45,17 +45,20 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+nmap <s-tab> :tabn<CR>
+
 " Turn off search hilight
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " for nerdtree
 nmap <unique> <F2> :NERDTreeToggle<CR>
+nmap <unique> <F3> :NERDTreeFind<CR>
 
 " rope jump to define
 nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
 
 " rope jump to occurrences
-nmap <unique> <c-m> :call RopeFindOccurrences()<CR>
+nmap <unique> <c-p> :call RopeFindOccurrences()<CR>
 
 " for grep
 nmap <silent><unique> <F7> :Grep<CR>
