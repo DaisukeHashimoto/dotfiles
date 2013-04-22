@@ -47,14 +47,14 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " tab
-nmap <s-tab> gt
+nmap <s-tab> :tabn<CR>
 
 " Turn off search hilight
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " for nerdtree
 nmap <unique> <F2> :NERDTreeToggle<CR>
-nmap <unique> <F3> ::NERDTreeFind<CR>
+nmap <unique> <F3> :NERDTreeFind<CR>
 
 " rope jump to define
 nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
