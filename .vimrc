@@ -24,6 +24,7 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
+Bundle "davidhalter/jedi-vim"
 
 filetype plugin indent on     " required!
 "
@@ -45,17 +46,21 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" tab
+nmap <s-tab> gt
+
 " Turn off search hilight
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " for nerdtree
 nmap <unique> <F2> :NERDTreeToggle<CR>
+nmap <unique> <F3> ::NERDTreeFind<CR>
 
 " rope jump to define
 nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
 
 " rope jump to occurrences
-nmap <unique> <c-m> :call RopeFindOccurrences()<CR>
+nmap <unique> <c-p> :call RopeFindOccurrences()<CR>
 
 " for grep
 nmap <silent><unique> <F7> :Grep<CR>
@@ -129,7 +134,15 @@ if has('mac')
   endif
 endif
 
+" jedi default autocompletion command:
+let g:jedi#autocompletion_command = "<C-j>"
+" Jedi automatically starts the completion
+let g:jedi#popup_on_dot = 0
+" that displays the function definition you're currently in
+let g:jedi#show_function_definition = "0"
 
+" ignore pyc
+let NERDTreeIgnore = ['\.pyc$']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for colorscheme
