@@ -1,0 +1,8 @@
+[user]
+	name = Daisuke Hashimoto
+	email = dsk.hashimoto@gmail.com
+[color]
+  ui = true
+[core]
+	editor = /opt/local/bin/vi
+  excludesfile = ~/.gitignore_global
