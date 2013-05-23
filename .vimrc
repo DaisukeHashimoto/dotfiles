@@ -25,6 +25,9 @@ Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
 Bundle "davidhalter/jedi-vim"
+Bundle "https://github.com/vim-scripts/renamer.vim.git"
+Bundle "https://github.com/tpope/vim-fugitive.git"
+Bundle "airblade/vim-gitgutter"
 
 filetype plugin indent on     " required!
 "
@@ -60,13 +63,13 @@ nmap <unique> <F3> :NERDTreeFind<CR>
 nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
 
 " rope jump to occurrences
-nmap <unique> <c-p> :call RopeFindOccurrences()<CR>
+nmap <unique> <F5> :call RopeFindOccurrences()<CR>
 
 " for grep
 nmap <silent><unique> <F7> :Grep<CR>
 nmap <silent><unique> <F8> :Rgrep<CR>
 
-" copy ward to clopboard
+" copy ward to clipboard
 nmap <unique> <F9> "*yw
 vmap <unique> <F9> "*y
 
@@ -86,7 +89,9 @@ vmap <silent><unique> sy :call YanktmpYank()<CR>
 vmap <silent><unique> sp :call YanktmpPaste_p()<CR>
 vmap <silent><unique> sP :call YanktmpPaste_P()<CR>
 
-
+" for gitgutter
+nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
+nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " general
@@ -156,3 +161,8 @@ augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
 augroup END
 
+" 引数なしでvimを開いたらNERDTreeを起動、引数ありならNERDTreeは起動しない
+let file_name = expand("%")
+if has('vim_starting') &&  file_name == ""
+    autocmd VimEnter * NERDTree ./
+endif

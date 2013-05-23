@@ -1,5 +1,5 @@
 
-alias dev='ssh webapp@mh.dev2.gu3.jp'
+alias rex_dev='ssh webapp@mh.dev2.gu3.jp'
 
 alias rex_fp='ssh webapp@rex-gree-app1.gu3.jp'
 alias rex_sp='ssh webapp@rex-gree-spapp1.gu3.jp'
@@ -10,6 +10,10 @@ alias rex_jobq2='ssh webapp@rex-gree-jobq2.gu3.jp'
 alias rex_jobq3='ssh webapp@rex-gree-jobq3.gu3.jp'
 alias rex_jobq4='ssh webapp@rex-gree-jobq4.gu3.jp'
 
+alias kemono_dev='ssh webapp@kemono-gree.dev2.gu3.jp'
+alias kemono_manage='ssh webapp@kemono-manage.gu3.jp'
+alias kemono_job1='ssh webapp@kemono-jobq1.gu3.jp'
+alias kemono_app1='ssh webapp@kemono-app1.gu3.jp'
 
 # git
 alias gst="git status"
