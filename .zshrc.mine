@@ -25,4 +25,4 @@ alias gbr="git branch"
 alias gpl="git pull"
 alias gps="git push"
 
-
+alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g --remote-tab-silent"
