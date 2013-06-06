@@ -161,8 +161,3 @@ augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
 augroup END
 
-" 引数なしでvimを開いたらNERDTreeを起動、引数ありならNERDTreeは起動しない
-let file_name = expand("%")
-if has('vim_starting') &&  file_name == ""
-    autocmd VimEnter * NERDTree ./
-endif
