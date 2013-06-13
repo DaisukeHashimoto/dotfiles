@@ -116,6 +116,7 @@ syntax on
 
 set hlsearch
 
+set clipboard=unnamed
 
 " ctags
 set tags=~/.tags
