@@ -151,6 +151,8 @@ let g:jedi#autocompletion_command = "<C-j>"
 let g:jedi#popup_on_dot = 0
 " that displays the function definition you're currently in
 let g:jedi#show_function_definition = "0"
+" that displays the function definition you're currently in
+let g:jedi#goto_command = "<C-i>"
 
 " ignore pyc
 let NERDTreeIgnore = ['\.pyc$']
