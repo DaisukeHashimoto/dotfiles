@@ -167,5 +167,6 @@ colorscheme jellybeans
 
 augroup filetypedetect
   au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
+  au BufNewFile,BufRead *.html set filetype=htmldjango syntax=htmldjango
 augroup END
 
