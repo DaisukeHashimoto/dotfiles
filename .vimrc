@@ -121,6 +121,9 @@ set clipboard=unnamed
 " ctags
 set tags=~/.tags
 
+" enable mouse
+set mouse=a
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""
