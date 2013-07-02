@@ -16,7 +16,7 @@ Bundle 'gmarik/vundle'
 Bundle 'https://github.com/klen/python-mode.git'
 Bundle 'yanktmp.vim'
 Bundle 'grep.vim'
-Bundle 'https://github.com/scrooloose/nerdtree.git'
+"Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'https://github.com/kevinw/pyflakes-vim.git'
 Bundle 'motus/pig.vim'
 
@@ -28,6 +28,7 @@ Bundle "davidhalter/jedi-vim"
 Bundle "https://github.com/vim-scripts/renamer.vim.git"
 Bundle "https://github.com/tpope/vim-fugitive.git"
 Bundle "airblade/vim-gitgutter"
+
 
 " color scheme
 Bundle "https://github.com/nanotech/jellybeans.vim.git"
@@ -140,13 +141,13 @@ let g:pyflakes_use_quickfix = 0
 
 " install gxargs
 " brew install findutils
-if has('mac')
-  if system('which gxargs')
-    let Grep_Xargs_Path = 'gxargs'
-  else
-    let Grep_Find_Use_Xargs = 0
-  endif
-endif
+"if has('mac')
+"  if system('which gxargs')
+"    let Grep_Xargs_Path = 'gxargs'
+"  else
+"    let Grep_Find_Use_Xargs = 0
+"  endif
+"endif
 
 " jedi default autocompletion command:
 let g:jedi#autocompletion_command = "<C-j>"
