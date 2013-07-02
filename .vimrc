@@ -48,7 +48,7 @@ Bundle "https://github.com/nanotech/jellybeans.vim.git"
 Bundle "https://github.com/w0ng/vim-hybrid.git"
 Bundle "https://github.com/jpo/vim-railscasts-theme.git"
 
-"syntax
+" syntax
 Bundle 'motus/pig.vim'
 
 filetype plugin indent on     " required!
@@ -78,25 +78,28 @@ nmap <s-tab> :tabn<CR>
 " Turn off search hilight
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" for unite
+nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
+
 " for vimfiler
 nmap <unique> <F3> :VimFiler<CR>
-
-" rope jump to define
-nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
+nmap <unique> <F4> :VimFilerBufferDir<CR>
 
 " rope jump to occurrences
 nmap <unique> <F5> :call RopeFindOccurrences()<CR>
-
-" copy ward to clipboard
-nmap <unique> <F9> "*yw
-vmap <unique> <F9> "*y
-
 
 " rope completion
 imap <unique> <F6> <C-Space>
 
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
+
+" copy ward to clipboard
+nmap <unique> <F9> "*yw
+vmap <unique> <F9> "*y
+
+" rope jump to define
+nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
 
 " for yanktmp
 nmap <silent><unique> sy :call YanktmpYank()<CR>
@@ -142,12 +145,11 @@ set mouse=a
 " for unite
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " ignore pyc
-let vimfiler_ignore_pattern = '\.pyc$'
-
+let vimfiler_ignore_pattern = '*.pyc'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" for plugin
+" for python
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for python-mode
 " Enable python folding
