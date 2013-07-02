@@ -12,28 +12,44 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-Bundle 'https://github.com/klen/python-mode.git'
-Bundle 'yanktmp.vim'
-Bundle 'grep.vim'
-"Bundle 'https://github.com/scrooloose/nerdtree.git'
-Bundle 'https://github.com/kevinw/pyflakes-vim.git'
-Bundle 'motus/pig.vim'
 
+" My Bundles here:
+
+" common
+Bundle 'yanktmp.vim'
+Bundle "https://github.com/vim-scripts/renamer.vim.git"
+
+" SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
-Bundle "davidhalter/jedi-vim"
-Bundle "https://github.com/vim-scripts/renamer.vim.git"
+
+" unite
+"
+" # for vimproc
+" cd ~/.vim/bundle/vimproc/
+" make -f make_mac.mak
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/vimfiler'
+
+" git
 Bundle "https://github.com/tpope/vim-fugitive.git"
 Bundle "airblade/vim-gitgutter"
 
+" python
+Bundle 'https://github.com/klen/python-mode.git'
+Bundle 'https://github.com/kevinw/pyflakes-vim.git'
+Bundle "davidhalter/jedi-vim"
 
 " color scheme
 Bundle "https://github.com/nanotech/jellybeans.vim.git"
 Bundle "https://github.com/w0ng/vim-hybrid.git"
 Bundle "https://github.com/jpo/vim-railscasts-theme.git"
+
+" syntax
+Bundle 'motus/pig.vim'
 
 filetype plugin indent on     " required!
 "
@@ -45,6 +61,7 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " mapping
@@ -61,30 +78,28 @@ nmap <s-tab> :tabn<CR>
 " Turn off search hilight
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" for nerdtree
-nmap <unique> <F2> :NERDTreeToggle<CR>
-nmap <unique> <F3> :NERDTreeFind<CR>
+" for unite
+nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
 
-" rope jump to define
-nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
+" for vimfiler
+nmap <unique> <F3> :VimFiler<CR>
+nmap <unique> <F4> :VimFilerBufferDir<CR>
 
 " rope jump to occurrences
 nmap <unique> <F5> :call RopeFindOccurrences()<CR>
-
-" for grep
-nmap <silent><unique> <F7> :Grep<CR>
-nmap <silent><unique> <F8> :Rgrep<CR>
-
-" copy ward to clipboard
-nmap <unique> <F9> "*yw
-vmap <unique> <F9> "*y
-
 
 " rope completion
 imap <unique> <F6> <C-Space>
 
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
+
+" copy ward to clipboard
+nmap <unique> <F9> "*yw
+vmap <unique> <F9> "*y
+
+" rope jump to define
+nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
 
 " for yanktmp
 nmap <silent><unique> sy :call YanktmpYank()<CR>
@@ -125,8 +140,16 @@ set tags=~/.tags
 " enable mouse
 set mouse=a
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" for plugin
+" for unite
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ignore pyc
+let vimfiler_ignore_pattern = '*.pyc'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" for python
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for python-mode
 " Enable python folding
@@ -139,15 +162,6 @@ let g:pymode_utils_whitespaces = 0
 let g:pymode_rope_goto_def_newwin = 'vnew'
 let g:pyflakes_use_quickfix = 0
 
-" install gxargs
-" brew install findutils
-"if has('mac')
-"  if system('which gxargs')
-"    let Grep_Xargs_Path = 'gxargs'
-"  else
-"    let Grep_Find_Use_Xargs = 0
-"  endif
-"endif
 
 " jedi default autocompletion command:
 let g:jedi#autocompletion_command = "<C-j>"
@@ -158,8 +172,6 @@ let g:jedi#show_function_definition = "0"
 " that displays the function definition you're currently in
 let g:jedi#goto_command = "<C-i>"
 
-" ignore pyc
-let NERDTreeIgnore = ['\.pyc$']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for colorscheme
