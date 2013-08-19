@@ -26,3 +26,5 @@ alias gpl="git pull"
 alias gps="git push"
 
 alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g --remote-tab-silent"
+
+alias bancho_dev='ssh ubuntu@ec2-54-249-125-66.ap-northeast-1.compute.amazonaws.com -i ~/.ssh/id_rsa.hashimoto'
