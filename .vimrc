@@ -82,8 +82,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
 
 " for vimfiler
-nmap <unique> <F3> :VimFiler<CR>
-nmap <unique> <F4> :VimFilerBufferDir<CR>
+nmap <unique> <F3> :VimFiler -split -simple -winwidth=35 -no-quit<CR>
+nmap <unique> <F4> :VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
 
 " rope jump to occurrences
 nmap <unique> <F5> :call RopeFindOccurrences()<CR>
