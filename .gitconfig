@@ -4,5 +4,7 @@
 [color]
   ui = true
 [core]
-	editor = /opt/local/bin/vi
+  #editor = /opt/local/bin/vi
   excludesfile = ~/.gitignore_global
+[push]
+	default = upstream

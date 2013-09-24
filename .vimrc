@@ -94,6 +94,9 @@ imap <unique> <F6> <C-Space>
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
 
+" unite bookmark
+nmap <unique> <F8> :Unite bookmark<CR>
+
 " copy ward to clipboard
 nmap <unique> <F9> "*yw
 vmap <unique> <F9> "*y
@@ -135,11 +138,15 @@ set hlsearch
 set clipboard=unnamed
 
 " ctags
-set tags=~/.tags
+set tags=~/.tags2
 
 " enable mouse
-set mouse=a
+"set mouse=a
 
+autocmd QuickFixCmdPost *grep* cwindow
+"autocmd VimEnter * argadd **/*.pm **/*.pl
+
+set wildmode=longest,list
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for unite
