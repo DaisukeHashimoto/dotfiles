@@ -18,6 +18,7 @@ Bundle 'gmarik/vundle'
 " common
 Bundle 'yanktmp.vim'
 Bundle "https://github.com/vim-scripts/renamer.vim.git"
+Bundle 'kien/ctrlp.vim'
 
 " SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -49,6 +50,7 @@ Bundle "https://github.com/w0ng/vim-hybrid.git"
 Bundle "https://github.com/jpo/vim-railscasts-theme.git"
 
 " syntax
+Bundle 'scrooloose/syntastic'
 Bundle 'motus/pig.vim'
 
 filetype plugin indent on     " required!
