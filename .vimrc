@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 
 " common
 Bundle 'yanktmp.vim'
+Bundle 'thinca/vim-quickrun'
 Bundle "https://github.com/vim-scripts/renamer.vim.git"
 Bundle 'kien/ctrlp.vim'
 
@@ -125,6 +126,9 @@ vnoremap ,pt <Esc>:'<,'>! perltidy -se<CR>
 
 " git grep fugitive.vim
 nmap <unique> Gg :Ggrep! 
+nmap <unique> Gb :Gblame<CR>
+nmap <unique> Gd :Gdiff<CR>
+nmap <unique> Gs :Gstatus<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " general

@@ -16,27 +16,27 @@ esac
 #
 # set prompt
 #
-autoload -Uz add-zsh-hook
-autoload -Uz colors
-colors
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:*' enable git svn hg bzr
-zstyle ':vcs_info:*' formats '(%s)-[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
-zstyle ':vcs_info:bzr:*' use-simple true
-
-
-function _update_vcs_info_msg() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-add-zsh-hook precmd _update_vcs_info_msg
-PROMPT="%1(v|%F{green}%1v%f|)# "
-
-RPROMPT="@%{${fg[magenta]}%}%/%{${reset_color}%}"
+#autoload -Uz add-zsh-hook
+#autoload -Uz colors
+#colors
+#autoload -Uz vcs_info
+#
+#zstyle ':vcs_info:*' enable git svn hg bzr
+#zstyle ':vcs_info:*' formats '(%s)-[%b]'
+#zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+#zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
+#zstyle ':vcs_info:bzr:*' use-simple true
+#
+#
+#function _update_vcs_info_msg() {
+#    psvar=()
+#    LANG=en_US.UTF-8 vcs_info
+#    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+#}
+#add-zsh-hook precmd _update_vcs_info_msg
+#PROMPT="%1(v|%F{green}%1v%f|)# "
+#
+#RPROMPT="@%{${fg[magenta]}%}%/%{${reset_color}%}"
 
 
 # auto change directory
