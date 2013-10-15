@@ -16,10 +16,10 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 
 " common
-Bundle 'yanktmp.vim'
-Bundle 'thinca/vim-quickrun'
-Bundle "https://github.com/vim-scripts/renamer.vim.git"
+Bundle 'vim-scripts/yanktmp.vim'
+Bundle "vim-scripts/renamer.vim"
 Bundle 'kien/ctrlp.vim'
+Bundle 'thinca/vim-quickrun'
 
 " SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -37,18 +37,18 @@ Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimfiler'
 
 " git
-Bundle "https://github.com/tpope/vim-fugitive.git"
+Bundle "tpope/vim-fugitive"
 Bundle "airblade/vim-gitgutter"
 
 " python
-Bundle 'https://github.com/klen/python-mode.git'
-Bundle 'https://github.com/kevinw/pyflakes-vim.git'
+Bundle 'klen/python-mode'
 Bundle "davidhalter/jedi-vim"
+Bundle "andviro/flake8-vim"
 
 " color scheme
-Bundle "https://github.com/nanotech/jellybeans.vim.git"
-Bundle "https://github.com/w0ng/vim-hybrid.git"
-Bundle "https://github.com/jpo/vim-railscasts-theme.git"
+Bundle "nanotech/jellybeans.vim"
+Bundle "w0ng/vim-hybrid"
+Bundle "jpo/vim-railscasts-theme"
 
 " syntax
 Bundle 'scrooloose/syntastic'
@@ -120,6 +120,10 @@ vmap <silent><unique> sP :call YanktmpPaste_P()<CR>
 nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
 nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 
+" python flake8-vim
+nnoremap ,pp <Esc>:PyFlakeAuto<CR>
+vnoremap ,pp <Esc>:PyFlakeAuto<CR>
+
 " perl
 nnoremap ,pt <Esc>:%! perltidy -se<CR>
 vnoremap ,pt <Esc>:'<,'>! perltidy -se<CR>
@@ -151,7 +155,7 @@ set hlsearch
 set clipboard=unnamed
 
 " ctags
-set tags=~/.tags2
+set tags=~/.tags
 
 " enable mouse
 "set mouse=a
