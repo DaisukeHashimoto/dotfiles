@@ -38,7 +38,6 @@ Bundle 'Shougo/vimfiler'
 
 " git
 Bundle "tpope/vim-fugitive"
-Bundle "airblade/vim-gitgutter"
 
 " python
 Bundle 'klen/python-mode'
