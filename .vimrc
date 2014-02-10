@@ -45,6 +45,10 @@ Bundle 'klen/python-mode'
 Bundle "davidhalter/jedi-vim"
 Bundle "andviro/flake8-vim"
 
+" perl
+Bundle 'c9s/perlomni.vim'
+Bundle 'y-uuki/perl-local-lib-path.vim'
+
 " color scheme
 Bundle "nanotech/jellybeans.vim"
 Bundle "w0ng/vim-hybrid"
@@ -187,6 +191,13 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = "<C-j>"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#goto_assignments_command = "<C-i>"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" for perl
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:perl_local_lib_path = "vendor/lib"
+autocmd FileType perl PerlLocalLibPath
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
