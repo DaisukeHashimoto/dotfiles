@@ -38,6 +38,7 @@ Bundle 'Shougo/vimfiler'
 
 " git
 Bundle "tpope/vim-fugitive"
+" Bundle "airblade/vim-gitgutter"
 
 " python
 Bundle 'klen/python-mode'
@@ -106,9 +107,6 @@ nmap <unique> <F8> :Unite bookmark<CR>
 " copy ward to clipboard
 nmap <unique> <F9> "*yw
 vmap <unique> <F9> "*y
-
-" rope jump to define
-nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
 
 " for yanktmp
 nmap <silent><unique> sy :call YanktmpYank()<CR>
@@ -179,25 +177,20 @@ let vimfiler_ignore_pattern = '*.pyc'
 " for python
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for python-mode
-" Enable python folding
+let g:pymode_python = 'python3'
 let g:pymode_folding = 0
-" Disable pylint checking every save
 let g:pymode_lint_write = 0
-" Autoremove unused whitespaces
 let g:pymode_utils_whitespaces = 0
-" ropevim will open a new buffer for "go to definition" result
+let g:pymode_rope_goto_definition_bind = '<c-n>'
 let g:pymode_rope_goto_def_newwin = 'vnew'
 let g:pyflakes_use_quickfix = 0
+let g:pymode_virtualenv = 0
 
-
-" jedi default autocompletion command:
-let g:jedi#autocompletion_command = "<C-j>"
-" Jedi automatically starts the completion
+" for jedi
 let g:jedi#popup_on_dot = 0
-" that displays the function definition you're currently in
-let g:jedi#show_function_definition = "0"
-" that displays the function definition you're currently in
-let g:jedi#goto_command = "<C-i>"
+let g:jedi#completions_command = "<C-j>"
+let g:jedi#show_call_signatures = "0"
+let g:jedi#goto_assignments_command = "<C-i>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -174,3 +174,4 @@ esac
 
 ## load local .zshrc configuration file
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local
+
