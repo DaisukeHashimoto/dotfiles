@@ -167,6 +167,7 @@ let g:pymode_utils_whitespaces = 0
 
 " for jedi
 let g:jedi#popup_on_dot = 0
+let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "left"
 
 let g:jedi#goto_assignments_command = "<c-u>"
