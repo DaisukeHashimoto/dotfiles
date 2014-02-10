@@ -38,12 +38,10 @@ Bundle 'Shougo/vimfiler'
 
 " git
 Bundle "tpope/vim-fugitive"
-" Bundle "airblade/vim-gitgutter"
 
 " python
 Bundle 'klen/python-mode'
 Bundle "davidhalter/jedi-vim"
-Bundle "andviro/flake8-vim"
 
 " perl
 Bundle 'c9s/perlomni.vim'
@@ -51,8 +49,6 @@ Bundle 'y-uuki/perl-local-lib-path.vim'
 
 " color scheme
 Bundle "nanotech/jellybeans.vim"
-Bundle "w0ng/vim-hybrid"
-Bundle "jpo/vim-railscasts-theme"
 
 " syntax
 Bundle 'scrooloose/syntastic'
@@ -92,11 +88,6 @@ nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
 nmap <unique> <F3> :VimFiler -split -simple -winwidth=35 -no-quit<CR>
 nmap <unique> <F4> :VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
 
-" rope jump to occurrences
-nmap <unique> <F5> :call RopeFindOccurrences()<CR>
-
-" rope completion
-imap <unique> <F6> <C-Space>
 
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
@@ -117,13 +108,8 @@ vmap <silent><unique> sy :call YanktmpYank()<CR>
 vmap <silent><unique> sp :call YanktmpPaste_p()<CR>
 vmap <silent><unique> sP :call YanktmpPaste_P()<CR>
 
-" for gitgutter
-nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
-nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
-
-" python flake8-vim
-nnoremap ,pp <Esc>:PyFlakeAuto<CR>
-vnoremap ,pp <Esc>:PyFlakeAuto<CR>
+" python
+nnoremap ,pp <Esc>:PymodeLintAuto<CR>
 
 " perl
 nnoremap ,pt <Esc>:%! perltidy -se<CR>
@@ -158,11 +144,7 @@ set clipboard=unnamed
 " ctags
 set tags=~/.tags
 
-" enable mouse
-"set mouse=a
-
 autocmd QuickFixCmdPost *grep* cwindow
-"autocmd VimEnter * argadd **/*.pm **/*.pl
 
 set wildmode=longest,list
 
@@ -180,18 +162,20 @@ let vimfiler_ignore_pattern = '*.pyc'
 let g:pymode_python = 'python3'
 let g:pymode_folding = 0
 let g:pymode_lint_write = 0
-let g:pymode_utils_whitespaces = 0
-let g:pymode_rope_goto_definition_bind = '<c-n>'
-let g:pymode_rope_goto_def_newwin = 'vnew'
-let g:pyflakes_use_quickfix = 0
 let g:pymode_virtualenv = 0
+let g:pymode_utils_whitespaces = 0
 
 " for jedi
 let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = "<C-j>"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#goto_assignments_command = "<C-i>"
+let g:jedi#use_splits_not_buffers = "left"
 
+let g:jedi#goto_assignments_command = "<c-u>"
+let g:jedi#goto_definitions_command = "<c-n>"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<c-m>"
+let g:jedi#completions_command = "<c-i>"
+let g:jedi#rename_command = "<c-r>"
+let g:jedi#show_call_signatures = "1"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for perl
