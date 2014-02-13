@@ -42,7 +42,6 @@ Bundle "tpope/vim-fugitive"
 " python
 Bundle 'klen/python-mode'
 Bundle "davidhalter/jedi-vim"
-Bundle "andviro/flake8-vim"
 
 " perl
 Bundle 'c9s/perlomni.vim'
@@ -50,8 +49,6 @@ Bundle 'y-uuki/perl-local-lib-path.vim'
 
 " color scheme
 Bundle "nanotech/jellybeans.vim"
-Bundle "w0ng/vim-hybrid"
-Bundle "jpo/vim-railscasts-theme"
 
 " syntax
 Bundle 'scrooloose/syntastic'
@@ -91,11 +88,6 @@ nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
 nmap <unique> <F3> :VimFiler -split -simple -winwidth=35 -no-quit<CR>
 nmap <unique> <F4> :VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
 
-" rope jump to occurrences
-nmap <unique> <F5> :call RopeFindOccurrences()<CR>
-
-" rope completion
-imap <unique> <F6> <C-Space>
 
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
@@ -107,9 +99,6 @@ nmap <unique> <F8> :Unite bookmark<CR>
 nmap <unique> <F9> "*yw
 vmap <unique> <F9> "*y
 
-" rope jump to define
-nmap <unique> <c-n> :call RopeGotoDefinition()<CR>
-
 " for yanktmp
 nmap <silent><unique> sy :call YanktmpYank()<CR>
 nmap <silent><unique> sp :call YanktmpPaste_p()<CR>
@@ -119,13 +108,8 @@ vmap <silent><unique> sy :call YanktmpYank()<CR>
 vmap <silent><unique> sp :call YanktmpPaste_p()<CR>
 vmap <silent><unique> sP :call YanktmpPaste_P()<CR>
 
-" for gitgutter
-nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
-nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
-
-" python flake8-vim
-nnoremap ,pp <Esc>:PyFlakeAuto<CR>
-vnoremap ,pp <Esc>:PyFlakeAuto<CR>
+" python
+nnoremap ,pp <Esc>:PymodeLintAuto<CR>
 
 " perl
 nnoremap ,pt <Esc>:%! perltidy -se<CR>
@@ -160,11 +144,7 @@ set clipboard=unnamed
 " ctags
 set tags=~/.tags
 
-" enable mouse
-"set mouse=a
-
 autocmd QuickFixCmdPost *grep* cwindow
-"autocmd VimEnter * argadd **/*.pm **/*.pl
 
 set wildmode=longest,list
 
@@ -179,26 +159,24 @@ let vimfiler_ignore_pattern = '*.pyc'
 " for python
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for python-mode
-" Enable python folding
+let g:pymode_python = 'python3'
 let g:pymode_folding = 0
-" Disable pylint checking every save
 let g:pymode_lint_write = 0
-" Autoremove unused whitespaces
+let g:pymode_virtualenv = 0
 let g:pymode_utils_whitespaces = 0
-" ropevim will open a new buffer for "go to definition" result
-let g:pymode_rope_goto_def_newwin = 'vnew'
-let g:pyflakes_use_quickfix = 0
 
-
-" jedi default autocompletion command:
-let g:jedi#autocompletion_command = "<C-j>"
-" Jedi automatically starts the completion
+" for jedi
 let g:jedi#popup_on_dot = 0
-" that displays the function definition you're currently in
-let g:jedi#show_function_definition = "0"
-" that displays the function definition you're currently in
-let g:jedi#goto_command = "<C-i>"
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#use_splits_not_buffers = "left"
 
+let g:jedi#goto_assignments_command = "<c-u>"
+let g:jedi#goto_definitions_command = "<c-n>"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<c-m>"
+let g:jedi#completions_command = "<c-i>"
+let g:jedi#rename_command = "<c-r>"
+let g:jedi#show_call_signatures = "1"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for perl
