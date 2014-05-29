@@ -1,30 +1,3 @@
 
-alias rex_dev='ssh webapp@mh.dev2.gu3.jp'
-
-alias rex_fp='ssh webapp@rex-gree-app1.gu3.jp'
-alias rex_sp='ssh webapp@rex-gree-spapp1.gu3.jp'
-alias rex_nfs='ssh webapp@rex-gree-nfs.gu3.jp'
-
-alias rex_jobq1='ssh webapp@rex-gree-jobq1.gu3.jp'
-alias rex_jobq2='ssh webapp@rex-gree-jobq2.gu3.jp'
-alias rex_jobq3='ssh webapp@rex-gree-jobq3.gu3.jp'
-alias rex_jobq4='ssh webapp@rex-gree-jobq4.gu3.jp'
-
-alias kemono_dev='ssh webapp@kemono-gree.dev2.gu3.jp'
-alias kemono_manage='ssh webapp@kemono-manage.gu3.jp'
-alias kemono_job1='ssh webapp@kemono-jobq1.gu3.jp'
-alias kemono_app1='ssh webapp@kemono-app1.gu3.jp'
-
-# git
-alias gst="git status"
-alias gad="git add"
-alias gco="git commit"
-alias gch="git checkout"
-alias gdi="git diff"
-alias gbr="git branch"
-alias gpl="git pull"
-alias gps="git push"
-
 alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g --remote-tab-silent"
 
-alias bancho_dev='ssh ubuntu@ec2-54-249-125-66.ap-northeast-1.compute.amazonaws.com -i ~/.ssh/id_rsa.hashimoto'
