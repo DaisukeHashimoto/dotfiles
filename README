@@ -5,9 +5,6 @@ git submodule update
 # ~の下にシンボリックリンクを貼る
 sh put_all.sh
 
-# vundleのインストールコマンド実行
-Launch vim, run :BundleInstall 
-
 # vimプラグインで使用されるpythonはシステムデフォルトの物っぽいので、そっちのdefaultencodingを以下のように指定
 /opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages/sitecustomize.py
 
