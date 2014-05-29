@@ -20,6 +20,7 @@ Bundle 'vim-scripts/yanktmp.vim'
 Bundle "vim-scripts/renamer.vim"
 Bundle 'kien/ctrlp.vim'
 Bundle 'thinca/vim-quickrun'
+Bundle 'scrooloose/nerdtree'
 
 " SnipMate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -34,7 +35,6 @@ Bundle "garbas/vim-snipmate"
 " make -f make_mac.mak
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimfiler'
 
 " git
 Bundle "tpope/vim-fugitive"
@@ -47,11 +47,14 @@ Bundle "davidhalter/jedi-vim"
 Bundle 'c9s/perlomni.vim'
 Bundle 'y-uuki/perl-local-lib-path.vim'
 
+" SQL
+Bundle 'vim-scripts/Align'
+Bundle 'vim-scripts/SQLUtilities'
+
 " color scheme
 Bundle "nanotech/jellybeans.vim"
 
 " syntax
-Bundle 'scrooloose/syntastic'
 Bundle 'motus/pig.vim'
 
 filetype plugin indent on     " required!
@@ -84,10 +87,11 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " for unite
 nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
 
-" for vimfiler
-nmap <unique> <F3> :VimFiler -split -simple -winwidth=35 -no-quit<CR>
-nmap <unique> <F4> :VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+" for nerdtree
+nmap <unique> <F4> :NERDTreeToggle<CR>
 
+" align window
+nmap <unique> <F5> <C-w>=
 
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
@@ -142,6 +146,7 @@ set hlsearch
 set clipboard=unnamed
 
 " ctags
+" ctags -R --languages=perl --tag-relative -f ~/.tags
 set tags=~/.tags
 
 autocmd QuickFixCmdPost *grep* cwindow
@@ -151,8 +156,6 @@ set wildmode=longest,list
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for unite
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" ignore pyc
-let vimfiler_ignore_pattern = '*.pyc'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
