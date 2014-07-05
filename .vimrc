@@ -1,69 +1,76 @@
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" for vundle start
+" for Shougo/neobundle.vim start
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible               " be iMproved
-filetype off                   " required!
+if has('vim_starting')
+  set nocompatible               " Be iMproved
 
-set rtp+=~/.vim/vundle/
-call vundle#rc()
+  " Required:
+  set runtimepath+=/home/hashimoto/.vim/bundle/neobundle.vim/
+endif
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" Required:
+call neobundle#begin(expand('/home/hashimoto/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 
 " My Bundles here:
 
 " common
-Bundle 'vim-scripts/yanktmp.vim'
-Bundle "vim-scripts/renamer.vim"
-Bundle 'kien/ctrlp.vim'
-Bundle 'thinca/vim-quickrun'
+NeoBundle 'vim-scripts/yanktmp.vim'
+NeoBundle "vim-scripts/renamer.vim"
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'scrooloose/nerdtree'
 
 " SnipMate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
-Bundle "garbas/vim-snipmate"
+NeoBundle "MarcWeber/vim-addon-mw-utils"
+NeoBundle "tomtom/tlib_vim"
+NeoBundle "honza/vim-snippets"
+NeoBundle "garbas/vim-snipmate"
 
 " unite
 "
 " # for vimproc
 " cd ~/.vim/bundle/vimproc/
 " make -f make_mac.mak
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
 
 " git
-Bundle "tpope/vim-fugitive"
+NeoBundle "tpope/vim-fugitive"
 
 " python
-Bundle 'klen/python-mode'
-Bundle "davidhalter/jedi-vim"
+NeoBundle 'klen/python-mode'
+NeoBundle "davidhalter/jedi-vim"
 
 " perl
-Bundle 'c9s/perlomni.vim'
-Bundle 'y-uuki/perl-local-lib-path.vim'
+NeoBundle 'c9s/perlomni.vim'
+NeoBundle 'y-uuki/perl-local-lib-path.vim'
+
+" SQL
+NeoBundle 'vim-scripts/Align'
+NeoBundle 'vim-scripts/SQLUtilities'
 
 " color scheme
-Bundle "nanotech/jellybeans.vim"
+NeoBundle "nanotech/jellybeans.vim"
 
 " syntax
-Bundle 'scrooloose/syntastic'
-Bundle 'motus/pig.vim'
+NeoBundle 'motus/pig.vim'
 
-filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -84,10 +91,11 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " for unite
 nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
 
-" for vimfiler
-nmap <unique> <F3> :VimFiler -split -simple -winwidth=35 -no-quit<CR>
-nmap <unique> <F4> :VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+" for nerdtree
+nmap <unique> <F4> :NERDTreeToggle<CR>
 
+" align window
+nmap <unique> <F5> <C-w>=
 
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
@@ -121,6 +129,9 @@ nmap <unique> Gb :Gblame<CR>
 nmap <unique> Gd :Gdiff<CR>
 nmap <unique> Gs :Gstatus<CR>
 
+" ctags
+nmap <C-]> g<C-]>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " general
 """""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,6 +153,7 @@ set hlsearch
 set clipboard=unnamed
 
 " ctags
+" ctags -R --languages=perl --tag-relative -f ~/.tags
 set tags=~/.tags
 
 autocmd QuickFixCmdPost *grep* cwindow
@@ -151,8 +163,6 @@ set wildmode=longest,list
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for unite
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" ignore pyc
-let vimfiler_ignore_pattern = '*.pyc'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""

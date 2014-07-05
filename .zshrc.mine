@@ -1,3 +1,13 @@
 
 alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g --remote-tab-silent"
 
+# git
+alias gst="git status"
+alias gad="git add"
+alias gco="git commit"
+alias gch="git checkout"
+alias gdi="git diff"
+alias gbr="git branch"
+alias gpl="git pull"
+alias gps="git push"
+
