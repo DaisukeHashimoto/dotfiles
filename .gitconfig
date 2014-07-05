@@ -6,7 +6,6 @@
 [core]
   #editor = /opt/local/bin/vi
   excludesfile = ~/.gitignore_global
-	pager = lv -c
 [push]
 	default = upstream
 [pull]
