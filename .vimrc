@@ -129,6 +129,9 @@ nmap <unique> Gb :Gblame<CR>
 nmap <unique> Gd :Gdiff<CR>
 nmap <unique> Gs :Gstatus<CR>
 
+" ctags
+nmap <C-]> g<C-]>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " general
 """""""""""""""""""""""""""""""""""""""""""""""""""""

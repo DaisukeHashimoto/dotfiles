@@ -9,5 +9,11 @@
 	pager = lv -c
 [push]
 	default = upstream
+[pull]
+  rebase = true
 [merge]
   ff = false
+[alias]
+	co = checkout
+	st = status
+	df = diff
