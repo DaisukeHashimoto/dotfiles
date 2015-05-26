@@ -6,12 +6,6 @@
 [core]
   #editor = /opt/local/bin/vi
   excludesfile = ~/.gitignore_global
-[push]
-	default = upstream
-[pull]
-  rebase = true
-[merge]
-  ff = false
 [alias]
 	co = checkout
 	st = status

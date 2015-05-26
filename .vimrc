@@ -31,19 +31,11 @@ NeoBundle "tomtom/tlib_vim"
 NeoBundle "honza/vim-snippets"
 NeoBundle "garbas/vim-snipmate"
 
-" unite
-"
-" # for vimproc
-" cd ~/.vim/bundle/vimproc/
-" make -f make_mac.mak
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
-
 " git
 NeoBundle "tpope/vim-fugitive"
 
 " python
-NeoBundle 'klen/python-mode'
+"NeoBundle 'klen/python-mode'
 NeoBundle "davidhalter/jedi-vim"
 
 " perl
@@ -169,11 +161,11 @@ set wildmode=longest,list
 " for python
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for python-mode
-let g:pymode_python = 'python3'
-let g:pymode_folding = 0
-let g:pymode_lint_write = 0
-let g:pymode_virtualenv = 0
-let g:pymode_utils_whitespaces = 0
+"let g:pymode_python = 'python3'
+"let g:pymode_folding = 0
+"let g:pymode_lint_write = 0
+"let g:pymode_virtualenv = 0
+"let g:pymode_utils_whitespaces = 0
 
 " for jedi
 let g:jedi#popup_on_dot = 0
