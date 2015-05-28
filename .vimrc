@@ -37,6 +37,7 @@ NeoBundle "tpope/vim-fugitive"
 " python
 "NeoBundle 'klen/python-mode'
 NeoBundle "davidhalter/jedi-vim"
+NeoBundle "andviro/flake8-vim"
 
 " perl
 NeoBundle 'c9s/perlomni.vim'
@@ -92,8 +93,8 @@ nmap <unique> <F5> <C-w>=
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
 
-" unite bookmark
-nmap <unique> <F8> :Unite bookmark<CR>
+" auto flake8
+vmap <unique> <F8> :PyFlakeAuto<CR>
 
 " copy ward to clipboard
 nmap <unique> <F9> "*yw
@@ -166,6 +167,10 @@ set wildmode=longest,list
 "let g:pymode_lint_write = 0
 "let g:pymode_virtualenv = 0
 "let g:pymode_utils_whitespaces = 0
+
+" for flake8
+let g:PyFlakeOnWrite = 0
+let g:PyFlakeCheckers = 'pep8'
 
 " for jedi
 let g:jedi#popup_on_dot = 0
