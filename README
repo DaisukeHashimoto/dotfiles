@@ -5,12 +5,3 @@ $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 # ~の下にシンボリックリンクを貼る
 sh put_all.sh
 
-# flake8で使う
-sudo easy_install frosted
-
-# vimプラグインで使用されるpythonはシステムデフォルトの物っぽいので、そっちのdefaultencodingを以下のように指定
-/opt/local/Library/Frameworks/Python.framework/Versions/Current/lib/python2.7/site-packages/sitecustomize.py
-
-import sys
-sys.setdefaultencoding("utf-8")
-

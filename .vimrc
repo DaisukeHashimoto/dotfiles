@@ -22,7 +22,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'vim-scripts/yanktmp.vim'
 NeoBundle "vim-scripts/renamer.vim"
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
 
 " SnipMate
@@ -35,24 +34,10 @@ NeoBundle "garbas/vim-snipmate"
 NeoBundle "tpope/vim-fugitive"
 
 " python
-"NeoBundle 'klen/python-mode'
 NeoBundle "davidhalter/jedi-vim"
-NeoBundle "andviro/flake8-vim"
-
-" perl
-NeoBundle 'c9s/perlomni.vim'
-NeoBundle 'y-uuki/perl-local-lib-path.vim'
-
-" SQL
-NeoBundle 'vim-scripts/Align'
-NeoBundle 'vim-scripts/SQLUtilities'
 
 " color scheme
 NeoBundle "nanotech/jellybeans.vim"
-
-" syntax
-NeoBundle 'motus/pig.vim'
-
 
 
 " Required:
@@ -81,9 +66,6 @@ nmap <s-tab> :tabn<CR>
 " Turn off search hilight
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" for unite
-nmap <unique> <F2> :Unite file_mru -default-action=vsplit<CR>
-
 " for nerdtree
 nmap <unique> <F4> :NERDTreeToggle<CR>
 
@@ -92,9 +74,6 @@ nmap <unique> <F5> <C-w>=
 
 " ctags completion
 imap <unique> <F7> <C-x><C-]>
-
-" auto flake8
-vmap <unique> <F8> :PyFlakeAuto<CR>
 
 " copy ward to clipboard
 nmap <unique> <F9> "*yw
@@ -111,10 +90,6 @@ vmap <silent><unique> sP :call YanktmpPaste_P()<CR>
 
 " python
 nnoremap ,pp <Esc>:PymodeLintAuto<CR>
-
-" perl
-nnoremap ,pt <Esc>:%! perltidy -se<CR>
-vnoremap ,pt <Esc>:'<,'>! perltidy -se<CR>
 
 " git grep fugitive.vim
 nmap <unique> Gg :Ggrep! 
@@ -153,25 +128,10 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 set wildmode=longest,list
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" for unite
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " for python
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" for python-mode
-"let g:pymode_python = 'python3'
-"let g:pymode_folding = 0
-"let g:pymode_lint_write = 0
-"let g:pymode_virtualenv = 0
-"let g:pymode_utils_whitespaces = 0
-
-" for flake8
-let g:PyFlakeOnWrite = 0
-let g:PyFlakeCheckers = 'pep8'
-
 " for jedi
 let g:jedi#popup_on_dot = 0
 let g:jedi#use_tabs_not_buffers = 0
@@ -185,12 +145,6 @@ let g:jedi#usages_command = "<c-m>"
 let g:jedi#completions_command = "<c-i>"
 let g:jedi#rename_command = "<c-r>"
 let g:jedi#show_call_signatures = "1"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" for perl
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:perl_local_lib_path = "vendor/lib"
-autocmd FileType perl PerlLocalLibPath
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
