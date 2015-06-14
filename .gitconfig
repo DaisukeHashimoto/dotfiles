@@ -10,3 +10,5 @@
 	co = checkout
 	st = status
 	df = diff
+[push]
+	default = matching
